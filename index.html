@@ -1,0 +1,132 @@
+   
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculator with JavaScript</title>
+    <style>
+        *{margin:0;padding: 0;box-sizing: border-box;}
+              .container{
+    text-align: center;
+    margin-top:23px
+}
+
+table{
+    margin: auto;
+}
+
+input{
+    border-radius: 21px;
+    border: 5px solid gold;
+    font-size:34px;
+    height: 65px;
+    width: 456px;
+}
+
+button{
+    border-radius: 20px;
+    font-size: 40px;
+    background: gold;
+    width: 102px;
+    height: 90px;
+    margin: 6px;
+}
+
+.calculator{ 
+    border: 4px solid crimson;
+    background-color: crimson;
+    padding: 23px;
+    border-radius: 53px;
+    display: inline-block;
+    
+}
+
+h1{
+    font-size: 28px;
+    font-family: 'Courier New', Courier, monospace;
+    color: white;
+    padding: 10px;
+}
+  
+    </style>
+</head>
+<body>
+ <div class="container">
+       
+
+        <div class="calculator">
+             <h1>Business Calculator</h1>
+            <input type="text" name="calc" id="calculator">
+            <table>
+                <tr>
+                    <td><button>(</button></td>
+                    <td><button>)</button></td>
+                    <td><button>C</button></td>
+                    <td><button>%</button></td>
+                </tr>
+                <tr>
+                    <td><button>7</button></td>
+                    <td><button>8</button></td>
+                    <td><button>9</button></td>
+                    <td><button>X</button></td>
+                </tr>
+                <tr>
+                    <td><button>4</button></td>
+                    <td><button>5</button></td>
+                    <td><button>6</button></td>
+                    <td><button>-</button></td>
+                </tr>
+                <tr>
+                    <td><button>1</button></td>
+                    <td><button>2</button></td>
+                    <td><button>3</button></td>
+                    <td><button>+</button></td>
+                </tr>
+                <tr>
+                    <td><button>0</button></td>
+                    <td><button>.</button></td>
+                    <td><button>/</button></td>
+                    <td><button>=</button></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+<script>
+     let cal = document.getElementById('calculator');
+     let btn =document.querySelectorAll('button');
+     let inputText = '';
+     for(item of btn){
+        item.addEventListener('click',(e)=>{
+            btnText = e.target.innerText;
+            // console.log(btnText);
+            if (btnText=="X") {
+
+                btnText= '*';
+
+                inputText+= btnText;
+
+                calculator.value = inputText;
+
+            }else if(btnText=='C'){
+
+                inputText ='';
+
+                calculator.value = inputText;
+
+            }else if (btnText=='=') {
+
+                calculator.value = eval(inputText);
+            }
+            else{
+                inputText +=btnText;
+
+                calculator.value =inputText;
+            }
+
+
+        })
+     }
+
+
+</script>
+</body>
+</html>
